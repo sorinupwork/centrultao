@@ -64,17 +64,53 @@ app.post("/user", (req, res) => {
     from: "centrultao@yahoo.com",
     to: req.body.userEmail,
     subject: "Bine ai venit la Centrul TAO!",
-    text: `Salutari!
-
-    Bine ai venit la 
-    🙂Centrul pentru Terapii Alternative Optime🙂 
-    Iti multumim pentru interesul acordat si iti recomandam sa ne urmaresti in continuare pe pagina de instagram, pentru a fii la curent cu ultimele noutati in materie de workshopuri, cursuri, terapii, meditatii etc.
-    
-    
-    Descarca "Meditatia pentru eliminarea friciilor" in format pdf. de aici: https://www.dropbox.com/s/vcoha3g0mqxdzs0/MEDITATIE%20PENTRU%20ELIMINAREA%20FRICIILOR%20-%20Emanuel%20Necatu%20-%20Centrul%20TAO.pdf?dl=0
-
-    Descarca "Meditatia pentru eliminarea friciilor" in format audio, de aici: https://www.dropbox.com/s/y5sswqpow9203nb/Meditatie%20pentru%20eliminarea%20friciilor%20-%20Emanuel%20Necatu%20-%20Centrul%20TAO.wav?dl=0
-    `,
+    html: `<div style="font-size: 25px; text-align: center;">
+    <div style="color: #6e176c">Salutari!</div>
+    <br />
+    <div style="color: #6e176c">
+      Bine ai venit la
+      <br>
+        🙂🙂🙂<b>Centrul pentru Terapii Alternative Optime</b>🙂🙂🙂
+      
+    </div>
+    <div style="color: #6e176c">
+      Iti multumim pentru interesul acordat si iti recomandam sa ne urmaresti
+      in continuare pe pagina de instagram, pentru a fii la curent cu ultimele
+      noutati in materie de workshopuri, cursuri, terapii, meditatii etc.
+    </div>
+    <p style="color: red">
+      Descarca "Meditatia pentru eliminarea friciilor" in format pdf. de aici
+      ⬇️
+    </p>
+    <a
+      href="https://www.dropbox.com/s/vcoha3g0mqxdzs0/MEDITATIE%20PENTRU%20ELIMINAREA%20FRICIILOR%20-%20Emanuel%20Necatu%20-%20Centrul%20TAO.pdf?dl=0"
+      >MEDITATIE PENTRU ELIMINAREA FRICIILOR - Emanuel Necatu - Centrul
+      TAO.pdf</a
+    >
+    <p style="color: red">
+      Descarca "Meditatia pentru eliminarea friciilor" in format audio, de
+      aici ⬇️
+    </p>
+    <a
+      href="https://www.dropbox.com/s/y5sswqpow9203nb/Meditatie%20pentru%20eliminarea%20friciilor%20-%20Emanuel%20Necatu%20-%20Centrul%20TAO.wav?dl=0"
+      >Meditatie pentru eliminarea friciilor - Emanuel Necatu - Centrul TAO.wav</a>
+    <br />
+    <div style="color: #6e176c">
+      <br />
+      <b>Lumina</b> si <b>Divinitatea</b> sa te calauzeasca!
+    </div>
+  </div>
+  <div style="position: absolute; left: 37%; right: 50%;margin-top: 50px;">
+  <img src="cid:emanuelnecatu" style="width: 500px; height: 130px;">
+</div>
+  `,
+    attachments: [
+      {
+        filename: "logo.png",
+        path: __dirname + "/logo.png",
+        cid: "emanuelnecatu",
+      },
+    ],
   };
 
   //CONFIRMATION OF SUBSCRIBER
@@ -100,10 +136,10 @@ app.post("/user", (req, res) => {
       console.log("Sent: " + info.response);
     }
   });
+  res.redirect("/");
   alert(
     "Inregistrearea a fost un success! Verifica-ti mail-ul pentru mai multe informatii."
   );
-  res.redirect("/");
 });
 
 //SERVER
