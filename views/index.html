@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centrul Tao</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1>
+        <span id="header">Completeaza formularul pentru a primi</span> <br />
+        Meditatia de eliminarea fricilor
+      </h1>
+
+      <form action="/user" method="post">
+        <div class="txt_field">
+          <input type="text" id="name" name="userName" required />
+          <span></span>
+          <label for="name">Nume si Prenume *</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="email" id="email" name="userEmail" required />
+          <span></span>
+          <label for="email">E-Mail *</label>
+        </div>
+        <div class="pass">
+          Prin înscriere îți exprimi acordul de a folosi datele tale pentru a
+          putea comunica cu tine. Informațiile tale nu vor fi niciodată
+          distribuite catre tert.
+        </div>
+
+        <div class="accept">
+          <input type="checkbox" id="term" required />
+          <label for="term">Da *</label>
+        </div>
+
+        <button>Inregistreaza-te!</button>
+
+        <div class="footer">
+          Marketing by
+          <a href="">CentrulTao</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
